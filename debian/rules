@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+export DH_GOLANG_EXCLUDES := benchmarks
+
+%:
+	dh $@ --builddirectory=_build --buildsystem=golang --with=golang
+
+execute_after_dh_auto_configure:
+	# github.com/djherbis/atime v1.1.0 (pending packaging)
+	cp -a debian/go/src/github.com/djherbis _build/src/github.com/

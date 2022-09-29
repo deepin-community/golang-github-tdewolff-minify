@@ -1,0 +1,68 @@
+Source: golang-github-tdewolff-minify
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Anthony Fok <foka@debian.org>
+Section: golang
+Testsuite: autopkgtest-pkg-go
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               dh-golang (>= 1.39~),
+               golang-any,
+#              golang-github-djherbis-atime-dev (>= 1.1.0),
+               golang-github-dustin-go-humanize-dev (>= 1.0.0),
+               golang-github-fsnotify-fsnotify-dev (>= 1.4.9),
+               golang-github-matryer-try-dev,
+               golang-github-spf13-pflag-dev (>= 1.0.5),
+               golang-github-tdewolff-parse-dev (>= 2.5.21),
+               golang-github-tdewolff-test-dev (>= 1.0.6)
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-tdewolff-minify
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-tdewolff-minify.git
+Homepage: https://github.com/tdewolff/minify
+Rules-Requires-Root: no
+XS-Go-Import-Path: github.com/tdewolff/minify
+
+Package: golang-github-tdewolff-minify-dev
+Architecture: all
+Multi-Arch: foreign
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+#        golang-github-djherbis-atime-dev (>= 1.1.0),
+         golang-github-dustin-go-humanize-dev (>= 1.0.0),
+         golang-github-fsnotify-fsnotify-dev (>= 1.4.9),
+         golang-github-matryer-try-dev,
+         golang-github-spf13-pflag-dev (>= 1.0.5),
+         golang-github-tdewolff-parse-dev (>= 2.5.21),
+         golang-github-tdewolff-test-dev (>= 1.0.6)
+Description: Go minifiers for web formats
+ github.com/tdewolff/minify is a minifier package written in Go.
+ It provides HTML5, CSS3, JS, JSON, SVG and XML minifiers and an interface
+ to implement any other minifier.
+ .
+ Minification is the process of removing bytes from a file (such as
+ whitespace) without changing its output and therefore shrinking
+ its size and speeding up transmission over the Internet and possibly
+ parsing.  The implemented minifiers are high performance and streaming,
+ which implies O(n).
+ .
+ The core functionality associates mimetypes with minification functions,
+ allowing embedded resources (like CSS or JS within HTML files) to be
+ minified as well. Users can add new implementations that are triggered
+ based on a mimetype (or pattern), or redirect to an external command
+ (like ClosureCompiler, UglifyCSS, ...)
+
+Package: minify
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Built-Using: ${misc:Built-Using}
+Description: CLI implementation of the Go minify library package
+ /usr/bin/minify is a CLI implementation of the github.com/tdewolff/minify
+ Go library package.
+ .
+ It provides HTML5, CSS3, JS, JSON, SVG and XML minifiers.
+ .
+ Minification is the process of removing bytes from a file (such as
+ whitespace) without changing its output and therefore shrinking
+ its size and speeding up transmission over the Internet and possibly
+ parsing.  The implemented minifiers are high performance and streaming,
+ which implies O(n).

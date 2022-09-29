@@ -1,0 +1,154 @@
+golang-github-tdewolff-minify (2.9.22-1) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian Go Packaging Team <team+pkg-go@tracker.debian.org>  Thu, 26 May 2022 23:24:59 -0400
+
+golang-github-tdewolff-minify (2.9.22-1) unstable; urgency=medium
+
+  * New upstream version 2.9.22
+  * Update versioned dependencies as per go.mod
+  * Add local copy of github.com/djherbis/atime v1.1.0
+    until golang-github-djherbis-atime is packaged for Debian
+
+ -- Anthony Fok <foka@debian.org>  Thu, 04 Nov 2021 11:26:38 -0600
+
+golang-github-tdewolff-minify (2.9.21-1) unstable; urgency=medium
+
+  * New upstream version 2.9.21
+  * Bump dependency on golang-github-tdewolff-parse-dev to (>= 2.5.19)
+  * Update Lintian overrides for lintian >= 2.109.0.
+    Re: Fix non-sensical line lengths in hints from cruft check; see #996111
+
+ -- Anthony Fok <foka@debian.org>  Fri, 29 Oct 2021 03:42:25 -0600
+
+golang-github-tdewolff-minify (2.9.18-1) unstable; urgency=medium
+
+  * New upstream version 2.9.18
+  * Bump dependency on golang-github-tdewolff-parse-dev to (>= 2.5.18)
+
+ -- Anthony Fok <foka@debian.org>  Tue, 19 Oct 2021 15:26:10 -0600
+
+golang-github-tdewolff-minify (2.9.16-1) unstable; urgency=medium
+
+  * New upstream version 2.9.16
+  * Revert "Force build with Go 1.16" as v2.9.16 reverts back to
+    supporting Go 1.13
+  * Remove "DH_GOLANG_INSTALL_EXTRA := go.mod go.sum" from debian/rules
+    as these files are already handled by dh-golang (>= 1.39)
+
+ -- Anthony Fok <foka@debian.org>  Tue, 12 Oct 2021 03:05:07 -0600
+
+golang-github-tdewolff-minify (2.9.15-1) unstable; urgency=medium
+
+  * New upstream version 2.9.15
+  * Force build with Go 1.16 because minify v2.9.15 in particular needs it
+  * Bump dependency on golang-github-tdewolff-parse-dev to (>= 2.5.14)
+  * Bump Standards-Version to 4.6.0 (no change)
+  * Mark library package with "Multi-Arch: foreign"
+
+ -- Anthony Fok <foka@debian.org>  Thu, 02 Sep 2021 06:59:04 -0600
+
+golang-github-tdewolff-minify (2.9.13-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Anthony Fok ]
+  * New upstream version 2.9.13
+    with Debian dir 3c0239e6f47eda50206c1d8859107c005ed3330c
+  * debian/control:
+    - Change Section from devel to golang
+    - Bump debhelper dependency to "Build-Depends: debhelper-compat (= 13)"
+    - Bump Standards-Version to 4.5.1 (no change)
+    - Update versioned dependencies as per go.mod
+  * Override Lintian source-is-missing (line-length too long) errors
+    and fix duplicate-override-context warnings
+
+ -- Anthony Fok <foka@debian.org>  Mon, 09 Aug 2021 04:57:31 -0600
+
+golang-github-tdewolff-minify (2.7.2-1) unstable; urgency=medium
+
+  * New upstream version 2.7.2
+  * Update versioned dependencies according to go.mod
+
+ -- Anthony Fok <foka@debian.org>  Fri, 21 Feb 2020 04:07:14 -0700
+
+golang-github-tdewolff-minify (2.6.1-1) unstable; urgency=medium
+
+  * New upstream version 2.6.1
+  * debian/gbp.conf: Set debian-branch to debian/sid for DEP-14 conformance
+  * Add "Rules-Requires-Root: no" to debian/control
+  * Bump Standards-Version to 4.5.0 (no change)
+  * Update versioned dependency according to go.mod
+
+ -- Anthony Fok <foka@debian.org>  Wed, 19 Feb 2020 03:25:11 -0700
+
+golang-github-tdewolff-minify (2.5.2-1) unstable; urgency=medium
+
+  * New upstream version 2.5.2
+    - In particular, the removal of import comments in commit d2d0a4b9
+      solves a build error (seen in Hugo) in GOPATH mode with Go 1.13
+  * Update versioned dependency of tdewolff-{parse,test} according to go.mod
+  * Bump debhelper dependency to "Build-Depends: debhelper-compat (= 12)"
+  * Bump Standards-Version to 4.4.1 (no change)
+
+ -- Anthony Fok <foka@debian.org>  Tue, 08 Oct 2019 16:37:27 -0600
+
+golang-github-tdewolff-minify (2.3.8-1) unstable; urgency=medium
+
+  * New upstream version 2.3.8
+  * Install go.mod and go.sum
+
+ -- Anthony Fok <foka@debian.org>  Thu, 20 Dec 2018 11:48:19 -0700
+
+golang-github-tdewolff-minify (2.3.6-1) unstable; urgency=medium
+
+  * New upstream version 2.3.6
+  * Update Maintainer address in debian/control
+  * Bump Standards-Version to 4.2.1 (no change)
+  * Update versioned dependencies
+
+ -- Anthony Fok <foka@debian.org>  Thu, 20 Dec 2018 09:17:33 -0700
+
+golang-github-tdewolff-minify (2.3.5-2) unstable; urgency=medium
+
+  * Add versioned dependency on golang-github-tdewolff-parse-dev (>= 2.3.3-1~)
+  * Bump Standards-Version to 4.1.5 (no change)
+  * Override false-positive source-is-missing Lintian errors
+    due to sample benchmark HTML files containing long lines.
+  * Fix Lintian binary-control-field-duplicates-source
+
+ -- Anthony Fok <foka@debian.org>  Wed, 11 Jul 2018 10:07:08 -0600
+
+golang-github-tdewolff-minify (2.3.5-1) unstable; urgency=medium
+
+  * New upstream version 2.3.5
+  * Use debhelper (>= 11)
+
+ -- Anthony Fok <foka@debian.org>  Mon, 25 Jun 2018 12:28:24 -0600
+
+golang-github-tdewolff-minify (2.3.4-1) unstable; urgency=medium
+
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Anthony Fok ]
+  * New upstream version 2.3.4
+  * Remove obsolete dependency on golang-github-tdewolff-{buffer,strconv}-dev
+  * Apply "cme fix dpkg" and bump Standards-Version to 4.1.4
+  * Remove 001-disable-equinoxUpdate.patch:
+    Upstream switched from Equinox to GoReleaser in November 2017
+  * Add "DH_GOLANG_EXCLUDES := benchmarks" to debian/rules
+
+ -- Anthony Fok <foka@debian.org>  Tue, 10 Apr 2018 10:43:02 -0600
+
+golang-github-tdewolff-minify (2.1.0+git20170802.25.b6ab3cd-1) unstable; urgency=medium
+
+  * Initial release (Closes: #870594)
+  * 001-disable-equinoxUpdate.patch: Remove equinoxUpdate() to prevent
+    dependency on github.com/equinox-io/equinox which cannot yet be packaged
+    due to its lack of a license.
+
+ -- Anthony Fok <foka@debian.org>  Thu, 03 Aug 2017 01:26:11 -0600

@@ -1,0 +1,5 @@
+# These are just sample HTML files with very long lines, for benchmarking
+golang-github-tdewolff-minify source: source-is-missing benchmarks/sample_*.html
+golang-github-tdewolff-minify source: source-is-missing benchmarks/sample_*.js
+golang-github-tdewolff-minify source: source-is-missing tests/html/corpus/*.html
+golang-github-tdewolff-minify source: source-is-missing tests/js/corpus/*.js
